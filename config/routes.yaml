@@ -1,5 +1,10 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+
+weather_city:
+  path: /weather/{city}/{country?}
+  controller: App\Controller\WeatherController::city
+  methods: GET
