@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class WeatherController extends AbstractController
 {
-    #[Route('/weather/{city}/{country?}', name: 'app_weather')]
+    #[Route('/weather/{city}/{country?}')]
     public function city(
         string                $city,
         ?string               $country,
