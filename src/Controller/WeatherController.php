@@ -7,10 +7,12 @@ use App\Repository\MeasurementRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class WeatherController extends AbstractController
 {
-    #[Route('/weather/{city}/{country?}')]
+    #[Route('/weather/{city}/{country?}', name: 'app_weather_city')]
+    #[IsGranted('ROLE_WEATHER_CITY')]
     public function city(
         string                $city,
         ?string               $country,
